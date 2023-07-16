@@ -103,7 +103,7 @@ a{
 		
 		
 <script>
-const emailRegex = /^[^\s@]+@[^\s@]+\.(gmail\.com|yahoo|outlook|hotmail\.com)$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordRegex = /^(?=.*[A-Z]).{6,}$/;
 
 const registrationForm = document.getElementById('registrationForm');
@@ -114,12 +114,14 @@ registrationForm.addEventListener('submit', async (event) => {
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-
+  
+  
   if (!emailRegex.test(email)) {
     alert('Invalid email');
     return;
   }
-
+  
+  
   if (!passwordRegex.test(password)) {
     alert('Invalid password. Password should be at least 6 characters with one capital letter.');
     return;
@@ -140,11 +142,13 @@ registrationForm.addEventListener('submit', async (event) => {
 
     const data = await response.json();
     if (response.ok) {
-      alert(data.message);
+      alert(data.message); 
+	  
       window.location.href = "login.html";
+	  
     } else {
       alert(data.message);
-    }
+	  }
   } catch (error) {
     alert('Internal server error');
   }
