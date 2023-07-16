@@ -102,7 +102,8 @@ a{
         </div>
 		
 		
-<script>const emailRegex = /^[^\s@]+@[^\s@]+\.(com|net|org|edu|gov|mil|biz|info|name|museum|co\.uk|org\.uk|net\.uk|ac\.uk|sch\.uk|aero|asia|cat|coop|jobs|mobi|museum|tel|travel)$/i;
+<script>
+const emailRegex = /^[^\s@]+@[^\s@]+\.(com|net|org|edu|gov|mil|biz|info|name|museum|co\.uk|org\.uk|net\.uk|ac\.uk|sch\.uk|aero|asia|cat|coop|jobs|mobi|museum|tel|travel)$/i;
 
 const passwordRegex = /^(?=.*[A-Z]).{6,}$/;
 
@@ -114,6 +115,21 @@ registrationForm.addEventListener('submit', async (event) => {
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
+
+  if (name.trim() === '') {
+    alert('Please enter your name');
+    return;
+  }
+
+  if (email.trim() === '') {
+    alert('Please enter your email');
+    return;
+  }
+
+  if (password.trim() === '') {
+    alert('Please enter your password');
+    return;
+  }
 
   if (!emailRegex.test(email)) {
     alert('Invalid email');
