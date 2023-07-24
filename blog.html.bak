@@ -105,8 +105,12 @@
         </div>
 
         <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="index.html">product</a>
             <a href="blog.html">blogs</a>
-           </nav>
+            <a href="review.html">review</a>
+            <a href="index.html">contact</a>
+        </nav>
 
          <div class="icon">
             <i class="fas fa-bars" id="menu-bar"></i>
